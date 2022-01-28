@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export var speed = 14
+export var speed = 15
 export var gravity = 75
 
 var velocity = Vector3.ZERO
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_up"):
 		direction.z -= 1
 	if Input.is_action_pressed("jump"):
-		pass
+		velocity.y += 4
 
 	# In case the player presses, say, both W and D simultaneously, the vector will have a length of about 1.4. 
 	# But if they press a single key, it will have a length of 1. We want the vector's length to be consistent. 
